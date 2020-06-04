@@ -1,0 +1,52 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import TemplateDetail from "components/TemplateDetail";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ModalWarning from "components/ModalWarning/ModalWarning";
+import history from "utils/history";
+import './{{dashCase name}}.scss';
+
+const {{pascalCase name}} = props => {
+	const [titlePageState] = useState("{{dashCase name}} page");
+	const [textReturnState] = useState("Back");
+	const [showCancel, setShowCancel] = useState(false);
+
+	return (
+	<div className={'{{dashCase name}}-wrapper'}>
+		<TemplateDetail
+				textReturn={textReturnState}
+				isHideBurgerMobile={true}
+				iconReturn={<FontAwesomeIcon icon={"times"} className={"icon"}/>}
+				titlePage={titlePageState}
+				actionReturn={() => {
+				setShowCancel(true);
+				}}>
+			<div>
+				{{dashCase name}} page
+			</div>
+		</TemplateDetail>
+
+		<ModalWarning
+				title={""}
+				body={""}
+				cancelText={"Continue"}
+				acceptText={"Cancel"}
+				show={showCancel}
+				accept={() => {
+					history.goBack();
+				}}
+				close={setShowCancel}
+		/>
+	</div>
+);
+};
+
+{{pascalCase name}}.defaultProps = {
+
+};
+
+{{pascalCase name}}.propTypes = {
+
+};
+
+export default {{pascalCase name}};

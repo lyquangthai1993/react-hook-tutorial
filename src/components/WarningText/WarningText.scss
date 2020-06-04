@@ -1,0 +1,20 @@
+@import "../../variables";
+
+.warning-text-wrapper {
+  width: 100%;
+  background-color: var(--reddish-orange);
+  opacity: 0.8;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: (16 / $df-fs) * $rem;
+}
+
+.warning-logo {
+  width: 30px;
+  height: 27px;
+  display: inline-block;
+}
+
+.warning-content {
+  margin-left: (16 / $df-fs) * $rem;
+}
