@@ -1,19 +1,20 @@
 import React, {useState} from "react";
-import "./App.css";
 import {
   Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
   Nav,
+  Navbar,
+  NavbarBrand,
+  NavbarText,
+  NavbarToggler,
   NavItem,
   NavLink,
   UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
 } from "reactstrap";
+import "./App.scss";
+import AppRoutes, {routeLinks} from "./AppRoutes";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,33 +22,25 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <Navbar light expand="md">
+          <NavbarBrand href="/">React hooks</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              {Object.keys(routeLinks).map((key) => {
+                const {name, path} = routeLinks[key];
+                return (
+                  <NavItem key={key}>
+                    <NavLink href={path}>{name}</NavLink>
+                  </NavItem>
+                );
+              })}
             </Nav>
-            <NavbarText>Simple Text</NavbarText>
+            <NavbarText>BSS</NavbarText>
           </Collapse>
         </Navbar>
       </header>
+      <AppRoutes />
     </div>
   );
 }

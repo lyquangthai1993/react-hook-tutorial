@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "baseUrl": "./src",
+    "paths": {
+      "images/*": [
+        "images/*"
+      ],
+      "hooks": [
+        "hooks/index.js"
+      ],
+      "store/*": [
+        "store/*"
+      ],
+      "utils/*": [
+        "utils/*"
+      ],
+      "components/*": [
+        "components/*"
+      ],
+      "screens/*": [
+        "screens/*"
+      ],
+      "auth/*": [
+        "auth/*"
+      ],
+      "app-routes": [
+        "app-routes"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

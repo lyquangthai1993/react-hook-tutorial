@@ -1,0 +1,14 @@
+$font-primary: 'OpenSans';
+
+// Font-size
+$df-fs: 16;
+$tablet-fs: 18;
+$rem: 1rem;
+$vw: 1vw;
+
+$font-size-base: (13 / $df-fs) * $rem;
+
+$widthMenuLeft: (418 / $df-fs) * $rem;
+$heightHeader: (62 / $df-fs) * $rem;
+$heightHeaderMobile: (89 / $df-fs) * $rem;
+$widthMenuBaseRole: (468 / $df-fs) * $rem;

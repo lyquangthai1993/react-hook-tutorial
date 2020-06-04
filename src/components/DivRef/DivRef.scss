@@ -1,0 +1,16 @@
+@import "../../variables";
+
+.div-ref-wrapper {
+  display: inline-block;
+  .box-show-window-size {
+    border: 2px solid;
+    padding: 20px;
+
+    resize: both;
+    overflow: auto;
+  }
+}
+.middle-item {
+  align-items: center;
+  justify-content: center;
+}
