@@ -1,9 +1,9 @@
 import React from "react";
 import { Route } from "react-router";
-import HookInHook from "screens/HookInHook/hook-in-hook";
-import WindowSize from "screens/WindowSize/window-size";
 import Home from "screens/Home/home";
+import HookInHook from "screens/HookInHook/hook-in-hook";
 import IntervalDemo from "screens/IntervalDemo/interval-demo";
+import WindowSize from "screens/WindowSize/window-size";
 
 export const routeLinks = {
   home: {

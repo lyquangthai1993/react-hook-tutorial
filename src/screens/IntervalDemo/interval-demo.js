@@ -1,8 +1,7 @@
-import React, {useState} from "react";
-import PropTypes from "prop-types";
-import "./interval-demo.scss";
 import CounterInterval from "components/CounterInterval/counter-interval";
-import {Button} from "reactstrap";
+import React, { useState } from "react";
+import { Button } from "reactstrap";
+import "./interval-demo.scss";
 
 const IntervalDemo = (props) => {
   const [showCounter, setShowCounter] = useState(false);

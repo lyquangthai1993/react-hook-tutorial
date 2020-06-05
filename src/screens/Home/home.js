@@ -16,8 +16,8 @@ const Home = (props) => {
   });
   console.log(errors);
   const onSubmit = (data) => {
-    const {text} = data;
-    setTextState(text);
+    const {name} = data;
+    setTextState(name);
   };
 
   console.log(watch("example")); // watch input value by passing the name of it

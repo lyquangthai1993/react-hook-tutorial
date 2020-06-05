@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 import "./counter-interval.scss";
-import {Button} from "reactstrap";
 
 const CounterInterval = (props) => {
   const [counter, setCounter] = useState(0);

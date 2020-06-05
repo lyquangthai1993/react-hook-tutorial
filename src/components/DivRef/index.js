@@ -1,7 +1,7 @@
-import React, {useRef, useEffect} from "react";
+import { useRefResize } from "hooks";
 import PropTypes from "prop-types";
+import React, { useEffect, useRef } from "react";
 import "./DivRef.scss";
-import {useRefResize} from "hooks";
 
 const DivRef = (props) => {
   const {backgroundColor, width, height, name} = props;
