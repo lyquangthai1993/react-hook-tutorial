@@ -1,20 +1,7 @@
-import React, {useState} from "react";
-import {
-  Collapse,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Nav,
-  Navbar,
-  NavbarBrand,
-  NavbarText,
-  NavbarToggler,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-} from "reactstrap";
+import React, { useState } from "react";
+import { Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink } from "reactstrap";
 import "./App.scss";
-import AppRoutes, {routeLinks} from "./AppRoutes";
+import AppRoutes, { routeLinks } from "./AppRoutes";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,12 +15,13 @@ function App() {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               {Object.keys(routeLinks).map((key) => {
-                const {name, path} = routeLinks[key];
-                return (
-                  <NavItem key={key}>
-                    <NavLink href={path}>{name}</NavLink>
-                  </NavItem>
-                );
+                const {name, path, hideInNav} = routeLinks[key];
+                if (!hideInNav)
+                  return (
+                    <NavItem key={key}>
+                      <NavLink href={path}>{name}</NavLink>
+                    </NavItem>
+                  );
               })}
             </Nav>
             <NavbarText>BSS</NavbarText>
