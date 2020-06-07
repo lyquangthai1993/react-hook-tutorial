@@ -4,37 +4,34 @@ import "./home.scss";
 import {Button} from "reactstrap";
 import {useForm, ErrorMessage} from "react-hook-form";
 import * as yup from "yup";
+import TextBox from "components/TextBox";
 
 const TestSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
 });
 
 const Home = (props) => {
-  const {register, handleSubmit, watch, errors} = useForm({
+  const {register, handleSubmit, errors} = useForm({
     defaultValues: {name: ""},
     validationSchema: TestSchema,
   });
-  console.log(errors);
+
   const onSubmit = (data) => {
     const {name} = data;
     setTextState(name);
   };
 
-  console.log(watch("example")); // watch input value by passing the name of it
-
   const [textState, setTextState] = useState("");
   return (
     <div className={"home-wrapper"}>
-      <h2>Hello '{textState}'</h2>
-      <h3>React hooks example: </h3>
+      <div className="text-center">
+        <h2>Hello '{textState}'</h2>
+        <h3>React hooks example: </h3>
+      </div>
       {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
       <div className="container">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-group">
-            <input className="form-control" placeholder="Your name" name="name" ref={register} />
-            <ErrorMessage as={<p className="text-danger" />} errors={errors} name="name" />
-          </div>
-
+          <TextBox label="Name" type="text" placeholder="Your name" name={"name"} register={register} errors={errors} />
           <Button
             color="primary"
             type="submit"
