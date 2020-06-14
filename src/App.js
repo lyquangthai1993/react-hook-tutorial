@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar light expand="md">
-          <NavbarBrand href="/">React hooks</NavbarBrand>
+          <NavbarBrand href="/">React news hook</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
