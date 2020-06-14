@@ -11,6 +11,7 @@
     "lodash": "^4.17.15",
     "node-sass": "^4.14.1",
     "react": "^16.8",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.8",
     "react-hook-form": "^5.7.2",
     "react-router": "^5.2.0",
@@ -23,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "plop"
+    "generate": "plop",
+    "deploy": "npm run build && cd build && cp index.html 200.html && surge . thai-ly-react-hook.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
